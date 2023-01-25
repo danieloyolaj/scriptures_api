@@ -7,7 +7,7 @@ const Speakers = db.define('speakers', {
     primaryKey: true,
     allowNull: false,
     autoIncrement: true
-  },
+  }, 
   name: {
     type: DataTypes.STRING,
     allowNull: false,
