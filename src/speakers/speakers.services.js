@@ -47,7 +47,7 @@ const postSpeaker = (req, res) => {
 const patchSpeaker = (req, res) => {
   const id = req.params.id
   const name = req.body
-  speakersController.updateSpeaker(id, name) //use {name} if there's an error
+  speakersController.updateSpeaker(id, {name}) //use {name} if there's an error
     .then(data => {
       if(data[0]){
         res.status(200).json({message: 'Speaker updated successfully!'})
