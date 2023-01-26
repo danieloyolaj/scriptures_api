@@ -10,6 +10,7 @@ const conferencesRouter = require('./conferences/conferences.router')
 const referencesRouter = require('./references/references.router')
 const speakerRouter = require('./speakers/speakers.router')
 const speechesRouter = require('./speech/speech.router')
+const topicsRouter = require('./topics/topics.router')
 
 //Files
 const {port} = require('./config')
@@ -62,6 +63,7 @@ app.use('/api/v1/conferences', conferencesRouter)
 app.use('/api/v1/references', referencesRouter)
 app.use('/api/v1/speakers', speakerRouter)
 app.use('/api/v1/speeches', speechesRouter)
+app.use('/api/v1/topics', topicsRouter)
 
 app.listen(port, () => {
     console.log(`Server started at port ${port}`)
