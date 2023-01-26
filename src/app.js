@@ -8,6 +8,8 @@ const chaptersRouter = require('./chapters/chapters.router')
 const booksRouter = require('./books/books.router')
 const conferencesRouter = require('./conferences/conferences.router')
 const referencesRouter = require('./references/references.router')
+const speakerRouter = require('./speakers/speakers.router')
+const speechesRouter = require('./speech/speech.router')
 
 //Files
 const {port} = require('./config')
@@ -58,6 +60,8 @@ app.use('/api/v1/chapters', chaptersRouter)
 app.use('/api/v1/books', booksRouter)
 app.use('/api/v1/conferences', conferencesRouter)
 app.use('/api/v1/references', referencesRouter)
+app.use('/api/v1/speakers', speakerRouter)
+app.use('/api/v1/speeches', speechesRouter)
 
 app.listen(port, () => {
     console.log(`Server started at port ${port}`)
