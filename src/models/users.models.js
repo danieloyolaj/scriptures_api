@@ -45,7 +45,7 @@ const Users = db.define('users', {
     },
     country: {
 			type: DataTypes.STRING,
-			allowNull: true
+			allowNull: false
     },
     phone: {
 			type: DataTypes.STRING,

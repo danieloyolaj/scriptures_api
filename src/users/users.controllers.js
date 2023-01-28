@@ -10,6 +10,14 @@ const getAllUsers = async () => {
 			status: 'active'
 		}
 	})
+	return data
+}
+
+const getAllInactiveUsers = async () => {
+	const data = await Users.findAll({
+		where: {status: 'inactive'}
+	})
+	return data
 }
 
 //Get user by id
@@ -39,10 +47,11 @@ const createUser = async (data) => {
 		lastName: data.lastName,
 		email: data.email,
 		password: hashPassword(data.password),
-		phone: data.phone,
 		birthday: data.birthday,
 		gender: data.gender, 
-		country: data.country
+		country: data.country,
+		role: data.role,
+		phone: data.phone
 	})
 	return newUser
 }
@@ -63,6 +72,7 @@ const deleteUser = async (id) => {
 module.exports = {
 	createUser,
 	getAllUsers,
+	getAllInactiveUsers,
 	getUserById,
 	getUserByEmail,
 	updateUser,

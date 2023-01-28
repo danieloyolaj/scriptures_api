@@ -11,6 +11,8 @@ require('../middlewares/auth.middleware')(passport)
 
 //Root routes
 router.get('/', userServices.getAllUsers)
+router.get('/inactive', userServices.getAllInactiveUsers)
+router.post('/', userServices.registerUser)
 
 //Route of the logged user
 //These routes area protected

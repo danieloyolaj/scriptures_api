@@ -2,10 +2,10 @@ const usersControllers = require('./users.controllers')
 
 //Service for registering a user
 const registerUser = (req, res) => {
-  const { firstName, lastName, email, password, phone, birthday } = req.body
+  const { firstName, lastName, email, password, birthday, gender, role, country, phone } = req.body
   //Validating data
   if(firstName && lastName && email && password && phone && birthday){
-    usersControllers.createUser({firstName, lastName, email, password, phone, birthday })
+    usersControllers.createUser({firstName, lastName, email, password, birthday, gender, role, country, phone  })
       .then(data => {
         res.status(201).json(data)
       })
@@ -29,6 +29,16 @@ const getAllUsers = (req, res) => {
       res.status(200).json(response)
     })
     .catch((err) => {
+      res.status(400).json({message: err.message})
+    })
+}
+
+const getAllInactiveUsers = (req, res) => {
+  usersControllers.getAllInactiveUsers()
+    .then((response) => {
+      res.status(200).json(response)
+    })
+    .catch(err => {
       res.status(400).json({message: err.message})
     })
 }
@@ -122,6 +132,7 @@ const deleteMyUser = (req, res) => {
 module.exports = {
   registerUser,
   getAllUsers,
+  getAllInactiveUsers,
   getUserById,
   patchUser,
   deleteUser,
