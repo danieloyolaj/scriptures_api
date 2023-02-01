@@ -13,6 +13,7 @@ const getChapterById = async (id) => {
 const createChapter = async (data) => {
   const response = await Chapters.create({
     id: data.id,
+    chapterIntro: data.chapterIntro,
     chapter: data.chapter,
     bookId: data.bookId
   })

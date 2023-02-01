@@ -13,6 +13,11 @@ const Chapters = db.define('chapters', {
     type: DataTypes.STRING,
     allowNull: false
   },
+  chapterIntro: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    field: 'chapter_intro'
+  },
   bookId: {
     type: DataTypes.INTEGER,
     allowNull: false,

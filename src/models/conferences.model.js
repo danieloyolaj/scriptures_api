@@ -10,11 +10,11 @@ const Conferences = db.define('conferences', {
     allowNull: false
   },
   month:{
-    type: DataTypes.DATE,
+    type: DataTypes.STRING,
     allowNull: false,
   },
   year:{
-    type: DataTypes.INTEGER,
+    type: DataTypes.STRING,
     allowNull: false,
   },
   languageId:{

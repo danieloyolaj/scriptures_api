@@ -51,7 +51,7 @@ const createConference = (req, res) => {
 const patchConference = (req, res) => {
   const id = req.params.id
   const { month, year, languageId } = req.body
-  conferencesController.updateCanon(id, {month, year, languageId})
+  conferencesController.updateConference(id, {month, year, languageId})
     .then(data => {
       if(data[0]){
         res.status(200).json({
