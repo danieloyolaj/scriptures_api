@@ -46,7 +46,7 @@ const postTopic = (req, res) => {
 const patchTopic = (req, res) => {
   const id = req.params.id
   const topic = req.body
-  topicsController.updateTopic({id, topic})
+  topicsController.updateTopic(id, topic)
     .then(data => {
       if(data[0]){
         res.status(200).json({message: 'Topic updated successfully!'})
@@ -64,7 +64,7 @@ const deleteTopic = (req, res) => {
   topicsController.deleteTopic(id)
     .then(data => {
       if(data){
-        res.status(200).json()
+        res.status(204).json()
       }else{
         res.status(404).json({message: 'Invalid id.'})
       }

@@ -19,9 +19,8 @@ const createTopic = async (data) => {
 }
 
 const updateTopic = async (id, data) => {
-  const response = await Topics.update({
-    data, where: {id}
-  })
+  const response = await Topics.update(
+    data, {where: {id} })
   return response
 }
 

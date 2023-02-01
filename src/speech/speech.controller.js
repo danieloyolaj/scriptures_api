@@ -21,8 +21,8 @@ const createSpeech = async (data) => {
 }
 
 const updateSpeech = async (id, data) => {
-  const response = await Speech.update({
-    data, where: {id}
+  const response = await Speech.update(
+    data, {where: {id}
   })
   return response
 }

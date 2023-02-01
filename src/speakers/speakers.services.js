@@ -47,7 +47,7 @@ const postSpeaker = (req, res) => {
 const patchSpeaker = (req, res) => {
   const id = req.params.id
   const name = req.body
-  speakersController.updateSpeaker(id, {name}) //use {name} if there's an error
+  speakersController.updateSpeaker(id, name)
     .then(data => {
       if(data[0]){
         res.status(200).json({message: 'Speaker updated successfully!'})
@@ -65,7 +65,7 @@ const deleteSpeaker = (req, res) => {
   speakersController.deleteSpeaker(id)
     .then(data => {
       if(data){
-        res.status(200).json()
+        res.status(204).json()
       }else{
         res.status(404).json({message: 'Invalid id.'})
       }

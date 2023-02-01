@@ -19,9 +19,8 @@ const createSpeaker = async (data) => {
 }
 
 const updateSpeaker = async (id, data) => {
-  const response = await Speakers.update({
-    data, where: {id}
-  })
+  const response = await Speakers.update(
+    data, {where: {id} })
   return response
 }
 

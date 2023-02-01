@@ -47,7 +47,7 @@ const postSpeech = (req, res) => {
 const patchSpeech = (req, res) => {
   const id = req.params.id
   const {title, topicId, speakerId} = req.body
-  speechController.updateSpeech({id, title, topicId, speakerId})
+  speechController.updateSpeech(id, {title, topicId, speakerId})
     .then(data => {
       if(data[0]){
         res.status(200).json({message: 'Speech updated successfully!'})
@@ -65,7 +65,7 @@ const deleteSpeech = (req, res) => {
   speechController.deleteSpeech(id)
     .then(data => {
       if(data){
-        res.status(200).json()
+        res.status(204).json()
       }else{
         res.status(404).json({message: 'Invalid id.'})
       }
