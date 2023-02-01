@@ -8,9 +8,7 @@ const getAllCanons = async () => {
 
 const getCanonById = async (id) => {
   const data = await Canon.findOne({
-    where:{
-      id: id
-    }
+    where:{id}
   })
   return data
 } 

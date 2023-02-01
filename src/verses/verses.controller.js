@@ -20,9 +20,7 @@ const createVerse = async (data) => {
 }
 
 const updateVerse = async (id, data) => {
-  const response = await Verses.update({
-    data, where: {id}
-  })
+  const response = await Verses.update(data, {where: {id}})
   return response
 }
 

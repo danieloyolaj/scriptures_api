@@ -46,7 +46,7 @@ const postVerse = (req, res) => {
 const patchVerse = (req, res) => {
   const id = req.params.id
   const {verse, chapterId} = req.body
-  versesController.updateVerse({id, verse, chapterId})
+  versesController.updateVerse(id, {verse, chapterId})
     .then(data => {
       if(data[0]){
         res.status(200).json({message: 'Verse updatade successfully!'})
@@ -64,7 +64,7 @@ const deleteVerse = (req, res) => {
   versesController.deleteVerse(id)
     .then(data=> {
       if(data){
-        res.status(200).json()
+        res.status(204).json()
       }else{
         res.status(404).json({message: 'Invalid id.'})
       }
